@@ -39,7 +39,7 @@ console.log(description);
 console.log(6 + 3 - "4" - 2);
 */
 
-//Relation between == and ===, Number function
+/*Relation between == and ===, Number function
 
 const numNeighbours = Number(
   prompt("How many neighbour countriies does your counytry have")
@@ -47,3 +47,48 @@ const numNeighbours = Number(
 if (numNeighbours === 1) console.log("only one");
 else if (numNeighbours > 1) console.log("more than one");
 else console.log("No borders");
+
+*/
+
+/*
+let country = "Turkey";
+let population = 44;
+let isIsland = false;
+let language = "english";
+
+if (population < 50 && !isIsland && language == "english") {
+  console.log("you should live in", country);
+} else {
+  console.log(`${country} doesn't meet your criteria`);
+}
+*/
+
+//Switch exercise
+/*
+let language = prompt("write the language");
+
+switch (language) {
+  case "chinese":
+    console.log("Most number of native speakers");
+    break;
+  case "mandarin":
+    console.log("Most number of native speakers");
+    break;
+  case "spanish":
+    console.log("second language");
+    break;
+  case "english":
+    console.log("3rd place");
+    break;
+  default:
+    console.log("great language too");
+}*/
+
+//Ternary Operator Assignment
+
+let country = prompt("country");
+let population = prompt("population");
+
+console.log(
+  `${country}'s population is ${population > 33 ? "above" : "below"} average`
+);
