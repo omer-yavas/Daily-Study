@@ -85,10 +85,108 @@ switch (language) {
 }*/
 
 //Ternary Operator Assignment
-
+/*
 let country = prompt("country");
 let population = prompt("population");
 
 console.log(
   `${country}'s population is ${population > 33 ? "above" : "below"} average`
 );
+*/
+
+/*
+function describeCountry(country, population, capitalCity) {
+  return `${country} has ${population}million people and its capital city is ${capitalCity}`;
+}
+const a = describeCountry("Turkey", 90, "Ankara");
+const b = describeCountry("Greece", 15, "Athens");
+const c = describeCountry("Russia", 140, "Moskova");
+console.log(a, b, c);
+*/
+
+/*function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+*/
+/*
+const Turkey = percentageOfWorld1(90);
+const Greece = percentageOfWorld1(13);
+const Bosnia = percentageOfWorld1(4);
+console.log(Turkey, Greece, Bosnia);
+
+const percentageofWorld2 = function (population) {
+  return (population / 7900) * 100;
+};
+
+console.log(percentageofWorld2(500));
+*/
+/*
+let country = prompt("country");
+let population = Number(prompt("population"));
+function describePopulation(country, population) {
+  return `${country} has ${population} million people, which is about ${percentageOfWorld1(
+    population
+  )} of the world`;
+}
+console.log(`${describePopulation(country, population)}`);
+*/
+/*
+const populations = [20, 40, 60, 80];
+console.log(populations.length === 4);
+
+const percentages = [
+  percentageOfWorld1(populations[0]),
+  percentageOfWorld1(populations[1]),
+];
+console.log(percentages);
+*/
+
+/*
+const neighbours = [
+  "greece",
+  "bulgaria",
+  "georgia",
+  "armenia",
+  "iran",
+  "iraq",
+  "syria",
+];
+console.log(neighbours);
+neighbours.push("utopia");
+console.log(neighbours);
+neighbours.pop();
+console.log(neighbours);
+
+if (neighbours.includes("germany")) {
+} else {
+  console.log("not a central european country");
+}
+
+neighbours[1] = "republic of Bulgaria";
+console.log(neighbours);
+*/
+const myCountry = {
+  country: "Turkey",
+  capital: "Ankara",
+  language: "Turkish",
+  population: 90,
+  neighbours: ["greece", "bulgaria", "georgia", "iran", "iraq", "syria"],
+  describe: function () {
+    console.log(
+      `${this.country} has ${this.population} million ${this.language} speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital} :)`
+    );
+  },
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length === 0 ? true : false;
+  },
+};
+console.log(
+  `${myCountry.country} has${myCountry.population}million ${myCountry.language}speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`
+);
+
+myCountry.population += 2;
+console.log(myCountry.population);
+myCountry["population"] -= 2;
+console.log(myCountry.population);
+
+myCountry.describe();
