@@ -1,7 +1,7 @@
 import InputField from './InputField';
-import { useState } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 
-const ObjectCollector = () => {
+const ObjectCollector = (props, ref) => {
   const [data, setData] = useState([]);
 
   const inputAdder = () => {
@@ -16,16 +16,24 @@ const ObjectCollector = () => {
     setData(copyArr);
   };
 
-  const deleteHandler = (text, value, key) => {
+  const deleteHandler = (id) => {
+    const deleteThis = (item) => {
+      if (item.id !== id) return item;
+    };
     //const index = data.map((e) => e.id).indexOf(key);
     //const index = data.indexOf({ text: '', value: '', id: key });
-    const copyData = data.map((item) => 
-      if (item.id !== key) {
-        return item;
-      
-    });
-    setData(copyData);
+    const copyData = [...data];
+    const copyData1 = copyData.filter(deleteThis);
+    setData(copyData1);
   };
+
+  const writeAll = () => {
+    const format = [];
+    data.map((item) => format.push({ text: item.text, value: item.value }));
+    console.log(format);
+  };
+
+  useImperativeHandle(ref, () => ({ writeAll }));
 
   return (
     <>
@@ -42,4 +50,4 @@ const ObjectCollector = () => {
   );
 };
 
-export default ObjectCollector;
+export default forwardRef(ObjectCollector);
